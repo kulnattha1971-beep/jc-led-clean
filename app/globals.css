@@ -2,38 +2,255 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   DESIGN TOKENS — แก้ที่นี่ที่เดียว สีเปลี่ยนทั้งเว็บ
+   ============================================================ */
 :root {
-  --red: #E8001D; --red-dark: #C0001A; --red-light: #FFF0F0;
-  --black: #111111; --gray-dark: #333333; --gray-mid: #E5E5E5;
-  --gray-light: #F7F7F7; --gray-text: #666666; --white: #FFFFFF;
+  --red: #E8001D;
+  --red-dark: #C0001A;
+  --red-light: #FFF0F0;
+  --black: #111111;
+  --gray-dark: #333333;
+  --gray-mid: #E5E5E5;
+  --gray-light: #F7F7F7;
+  --gray-text: #666666;
+  --white: #FFFFFF;
   --green-line: #06C755;
 }
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-prompt), 'Prompt', sans-serif; color: var(--black); background: var(--white); -webkit-font-smoothing: antialiased; }
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-prompt), 'Prompt', sans-serif;
+  color: var(--black);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   TYPOGRAPHY SCALE
+   ============================================================ */
 h1 { font-weight: 900; line-height: 1.15; letter-spacing: -0.5px; }
 h2 { font-weight: 700; line-height: 1.25; }
 h3 { font-weight: 600; line-height: 1.35; }
+h4 { font-weight: 500; line-height: 1.4; }
 
+/* ============================================================
+   UTILITY COMPONENTS
+   ============================================================ */
 @layer components {
-  .btn-primary { @apply inline-flex items-center justify-center gap-2; background: var(--red); color: white; font-family: var(--font-prompt), sans-serif; font-weight: 600; padding: 13px 28px; border-radius: 4px; border: none; cursor: pointer; font-size: 14px; transition: background 0.2s; text-decoration: none; }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2;
+    background: var(--red);
+    color: white;
+    font-family: var(--font-prompt), sans-serif;
+    font-weight: 600;
+    padding: 13px 28px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s, transform 0.1s;
+    text-decoration: none;
+  }
   .btn-primary:hover { background: var(--red-dark); }
-  .btn-secondary { @apply inline-flex items-center justify-center gap-2; background: white; color: var(--black); font-family: var(--font-prompt), sans-serif; font-weight: 500; padding: 12px 28px; border-radius: 4px; border: 1.5px solid var(--gray-mid); cursor: pointer; font-size: 14px; text-decoration: none; }
+  .btn-primary:active { transform: scale(0.98); }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2;
+    background: white;
+    color: var(--black);
+    font-family: var(--font-prompt), sans-serif;
+    font-weight: 500;
+    padding: 12px 28px;
+    border-radius: 4px;
+    border: 1.5px solid var(--gray-mid);
+    cursor: pointer;
+    font-size: 14px;
+    transition: border-color 0.2s, transform 0.1s;
+    text-decoration: none;
+  }
   .btn-secondary:hover { border-color: var(--black); }
-  .btn-line { @apply inline-flex items-center justify-center gap-2; background: var(--green-line); color: white; font-family: var(--font-prompt), sans-serif; font-weight: 500; padding: 10px 20px; border-radius: 4px; border: none; cursor: pointer; font-size: 13px; text-decoration: none; }
-  .section-label { font-size: 11px; font-weight: 500; color: var(--red); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
-  .card { background: var(--white); border: 1px solid var(--gray-mid); border-radius: 8px; transition: border-color 0.2s, box-shadow 0.2s; }
-  .card:hover { border-color: var(--red); box-shadow: 0 4px 20px rgba(232,0,29,0.08); }
-  .pill { display: inline-flex; align-items: center; background: var(--gray-light); border: 1px solid var(--gray-mid); border-radius: 100px; padding: 4px 14px; font-size: 12px; font-weight: 500; }
-  .container-main { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+  .btn-secondary:active { transform: scale(0.98); }
+
+  .btn-line {
+    @apply inline-flex items-center justify-center gap-2;
+    background: var(--green-line);
+    color: white;
+    font-family: var(--font-prompt), sans-serif;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    transition: opacity 0.2s;
+    text-decoration: none;
+  }
+  .btn-line:hover { opacity: 0.9; }
+
+  /* Section Labels */
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--red);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--gray-mid);
+    border-radius: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    border-color: var(--red);
+    box-shadow: 0 4px 20px rgba(232, 0, 29, 0.08);
+  }
+
+  /* Pill Tags */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    background: var(--gray-light);
+    border: 1px solid var(--gray-mid);
+    border-radius: 100px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .pill-red {
+    background: var(--red-light);
+    border-color: #FFCCCC;
+    color: var(--red);
+  }
+
+  /* Page Container */
+  .container-main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Section Spacing */
   .section-pad { padding: 4rem 0; }
-  .form-input { width: 100%; padding: 12px 16px; border: 1px solid var(--gray-mid); border-radius: 4px; font-family: var(--font-prompt), sans-serif; font-size: 14px; color: var(--black); background: var(--white); transition: border-color 0.2s; outline: none; }
-  .form-input:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(232,0,29,0.08); }
-  .form-label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 0.4rem; color: var(--gray-dark); }
+  .section-pad-sm { padding: 2.5rem 0; }
 }
 
-.prose-thai h2 { font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem; }
-.prose-thai h3 { font-size: 1.2rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
-.prose-thai p { font-size: 15px; line-height: 1.9; color: var(--gray-dark); margin-bottom: 1.25rem; }
-.prose-thai ul { list-style: none; padding: 0; margin-bottom: 1.25rem; }
-.prose-thai ul li { padding-left: 1.5rem; position: relative; line-height: 1.8; color: var(--gray-dark); font-size: 15px; margin-bottom: 0.5rem; }
-.prose-thai ul li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; background: var(--red); border-radius: 50%; }
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Stagger delays สำหรับ Hero Section */
+.delay-100 { animation-delay: 0.1s; opacity: 0; }
+.delay-200 { animation-delay: 0.2s; opacity: 0; }
+.delay-300 { animation-delay: 0.3s; opacity: 0; }
+.delay-400 { animation-delay: 0.4s; opacity: 0; }
+
+/* ============================================================
+   STICKY NAV SCROLL SHADOW
+   ============================================================ */
+.nav-scrolled {
+  box-shadow: 0 1px 12px rgba(0,0,0,0.08);
+}
+
+/* ============================================================
+   BLOG CONTENT STYLES
+   ============================================================ */
+.prose-thai h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  color: var(--black);
+}
+.prose-thai h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+  color: var(--black);
+}
+.prose-thai p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--gray-dark);
+  margin-bottom: 1.25rem;
+}
+.prose-thai ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.25rem;
+}
+.prose-thai ul li {
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.8;
+  color: var(--gray-dark);
+  font-size: 15px;
+  margin-bottom: 0.5rem;
+}
+.prose-thai ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: var(--red);
+  border-radius: 50%;
+}
+
+/* ============================================================
+   PORTFOLIO FILTER ACTIVE STATE
+   ============================================================ */
+.filter-btn.active {
+  background: var(--red);
+  color: white;
+  border-color: var(--red);
+}
+
+/* ============================================================
+   FORM STYLES
+   ============================================================ */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--gray-mid);
+  border-radius: 4px;
+  font-family: var(--font-prompt), sans-serif;
+  font-size: 14px;
+  color: var(--black);
+  background: var(--white);
+  transition: border-color 0.2s;
+  outline: none;
+}
+.form-input:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(232, 0, 29, 0.08);
+}
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: var(--gray-dark);
+}

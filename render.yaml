@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: jc-led-website
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: RESEND_API_KEY
+        sync: false
+      - key: NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+        value: HUIYBTtTBZWq45KjbwxrVeskjwqr90tCatYbVfojiR0

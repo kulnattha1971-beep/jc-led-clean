@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "type": "งานแต่งงาน",
+    "loc": "โรงแรม สุขุมวิท",
+    "spec": "จอ P2.5 · 6×3.375m",
+    "bg": "#1a1a2e",
+    "image": "/portfolio/wedding-01.jpg"
+  },
+  {
+    "id": "2",
+    "type": "สัมมนา",
+    "loc": "อิมแพค เมืองทองธานี",
+    "spec": "จอ P3.9 · 8×4.5m",
+    "bg": "#0f2040",
+    "image": "/portfolio/seminar-01.jpg"
+  },
+  {
+    "id": "3",
+    "type": "ออกบูธ",
+    "loc": "Exhibition Hall · ลาดพร้าว",
+    "spec": "จอ P3.9 45° Corner",
+    "bg": "#1a0a00",
+    "image": "/portfolio/booth-01.jpg"
+  },
+  {
+    "id": "4",
+    "type": "ประชุม",
+    "loc": "อาคารสำนักงาน · สีลม",
+    "spec": "จอ P3.9 · 4×2.25m",
+    "bg": "#001a0a",
+    "image": "/portfolio/meeting-01.jpg"
+  },
+  {
+    "id": "5",
+    "type": "งานแต่งงาน",
+    "loc": "โรงแรม · ลาดพร้าว",
+    "spec": "จอ P2.5 · 5×2.8m + Side",
+    "bg": "#1a0a1a",
+    "image": "/portfolio/wedding-02.jpg"
+  },
+  {
+    "id": "6",
+    "type": "ออกบูธ",
+    "loc": "BITEC · บางนา",
+    "spec": "จอ P3.9 · 6×3m",
+    "bg": "#0a1a1a",
+    "image": "/portfolio/booth-02.jpg"
+  },
+  {
+    "id": "7",
+    "type": "สัมมนา",
+    "loc": "Royal Paragon Hall · Siam",
+    "spec": "จอ P3.9 · 10×5.625m",
+    "bg": "#1a1a00",
+    "image": "/portfolio/seminar-02.jpg"
+  },
+  {
+    "id": "8",
+    "type": "งานแต่งงาน",
+    "loc": "Grand Ballroom · กรุงเทพ",
+    "spec": "จอ P2.5 · 7×3.9m",
+    "bg": "#0a0a1a",
+    "image": "/portfolio/wedding-03.jpg"
+  },
+  {
+    "id": "9",
+    "type": "ประชุม",
+    "loc": "Convention Hall · กรุงเทพ",
+    "spec": "จอ P3.9 · 6×3.375m",
+    "bg": "#001010",
+    "image": "/portfolio/meeting-02.jpg"
+  }
+]
